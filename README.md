@@ -1,0 +1,2 @@
+# ECR
+creando imagenes ecr
