@@ -18,6 +18,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
 
       - name: Login Amazon ECR
@@ -26,3 +27,11 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build -t frontend ./frontend
+
+      - name: Tag Docker Image
+        run: |
+          docker tag frontend:latest 536342473074.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+
+      - name: Push Docker Image
+        run: |
+          docker push 536342473074.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
