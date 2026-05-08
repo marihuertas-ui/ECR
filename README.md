@@ -1,8 +1,8 @@
-# ECR
+# Tienda Perritos
 
-creando imagenes ecr prueba git push
-
-
-
-dasdaas
-
+Proyecto demo CI/CD con:
+- Frontend
+- Backend
+- GitHub Actions
+- Docker
+- AWS ECR

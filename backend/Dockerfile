@@ -1,13 +1,7 @@
-FROM node:18-alpine
-
+FROM python:3.11
 WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install --production
-
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 COPY . .
-
-EXPOSE 3001
-
-CMD ["npm", "start"]
+EXPOSE 5000
+CMD ["python","app.py"]
