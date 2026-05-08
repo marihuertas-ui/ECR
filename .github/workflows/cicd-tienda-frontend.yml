@@ -7,13 +7,10 @@ on:
       - "frontend/**"
 
 jobs:
-
   build-push-deploy-frontend:
-
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout código
       uses: actions/checkout@v3
 
